@@ -1,27 +1,34 @@
 #!bin/sh
 
+# mini_restart
+# kubectl delete deploy nginx-deployment
+# kubectl delete svc nginx-svc
+
+
+#all_restart
+# minikube stop
+# minikube delete 
+
+
 # start
-
-minikube start --vm-driver=virtualbox
-eval $(minikube docker-env)
+# minikube start --vm-driver=virtualbox
 minikube addons enable metallb
-kubectl apply -f ./configmap.yaml 
+eval $(minikube docker-env)
+
+
+# proces
 docker build -t nginx_image .
+kubectl apply -f ./configmap.yaml 
 kubectl apply -f nginx.yaml
-sh
-# kubectl get pods
+
+
+# check
+# kubectl get deploy 
+# kubectl get svc
 # minikube dashboard
 
-#restart
-
-# kubectl delete pods nginxs
-
+# sh
+# sh
 
 
 
-
-# docker build -t nginx_image .
-# kubectl apply -f nginx.yaml
-# kubectl get pods
-# minikube dashboard
-# docker run -it nginx_image
