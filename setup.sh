@@ -12,14 +12,16 @@
 
 # start
 # minikube start --vm-driver=virtualbox
-minikube addons enable metallb
+# minikube start --vm-driver=virtualbox
 eval $(minikube docker-env)
+minikube addons enable metallb
+# minikube addons enable dashboard
 
 
 # proces
-docker build -t nginx_image .
+docker build -t nginx_image ./nginx/
 kubectl apply -f ./configmap.yaml 
-kubectl apply -f nginx.yaml
+kubectl apply -f ./nginx/nginx.yaml
 
 
 # check

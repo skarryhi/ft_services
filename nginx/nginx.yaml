@@ -16,6 +16,10 @@ spec:
     port: 443
     name: https
     targetPort: 443
+  - protocol: TCP
+    port: 22
+    name: ssh
+    targetPort: 22
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -40,3 +44,4 @@ spec:
           ports:
           - containerPort: 80
           - containerPort: 443
+          - containerPort: 22
