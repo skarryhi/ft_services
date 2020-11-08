@@ -12,7 +12,7 @@
 
 # start
 # minikube start --vm-driver=virtualbox
-# minikube start --vm-driver=virtualbox
+minikube start --vm-driver=virtualbox || exit 1
 eval $(minikube docker-env)
 minikube addons enable metallb
 # minikube addons enable dashboard
@@ -20,8 +20,10 @@ minikube addons enable metallb
 
 # proces
 docker build -t nginx_image ./nginx/
+docker build -t ftps_image ./ftps/
 kubectl apply -f ./configmap.yaml 
 kubectl apply -f ./nginx/nginx.yaml
+kubectl apply -f ./ftps/ftps.yaml
 
 
 # check

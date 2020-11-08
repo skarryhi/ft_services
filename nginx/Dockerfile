@@ -23,6 +23,7 @@ RUN openssl req -newkey rsa:4096\
 #copy my files srcs
 COPY /srcs/nginx.conf /etc/nginx/conf.d/default.conf
 COPY /srcs/supervisord.conf /etc/supervisord.conf
+COPY /srcs/index.html /var/www/index.html
 # COPY ./srcs/start.sh /tmp/
 
 
