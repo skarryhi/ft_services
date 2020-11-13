@@ -3,7 +3,7 @@ FROM alpine:latest
 RUN apk add mysql mysql-client openrc
 
 COPY	srcs/start.sh ./
-
+COPY    srcs/wordpress.sql ./
 COPY	srcs/my.cnf ./etc/mysql/
 
 
