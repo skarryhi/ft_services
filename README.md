@@ -4,5 +4,3 @@ Ft_services introduced me to Kubernetes. I discovered cluster management and dep
 
 
 ##### 👩🏻‍💼 **[Skarryhi](https://github.com/skarryhi/)**
-
-##### 🏠 [Homepage](https://github.com/skarryhi/Philosophers)
